@@ -1,5 +1,5 @@
 import './common.css'
-import { ViewMode } from "./Dashboard";
+import { ViewMode } from "./common";
 
 type TransactionsProps = {
     changeViewModeHandler: (viewMode: ViewMode) => void;

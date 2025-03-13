@@ -1,12 +1,12 @@
 import './Accounts.css'
 import './common.css'
-import { ViewMode } from "./Dashboard";
+import { ViewMode } from "./common";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { NumericFormat } from "react-number-format";
 
 type AccountsProps = {
-    changeViewModeHandler: (viewMode: ViewMode) => void;
+    changeViewModeHandler: (viewMode: ViewMode, accountNumber?: string) => void;
 }
 
 type Account = {
@@ -16,7 +16,7 @@ type Account = {
     balance: string;
 }
 
-export default function Accounts({changeViewModeHandler}: Readonly<AccountsProps>) {
+export default function Accounts({ changeViewModeHandler }: Readonly<AccountsProps>) {
 
     const getAccounts = async () => {
         const response = await axios.get('http://localhost:8080/api/v1/accounts')
@@ -54,10 +54,10 @@ export default function Accounts({changeViewModeHandler}: Readonly<AccountsProps
                             />
                         </span>
                         <span className='column actions'>
-                            <button onClick={() => changeViewModeHandler(ViewMode.DEPOSIT_FORM)}>Wpłać</button>
-                            <button onClick={() => changeViewModeHandler(ViewMode.WITHDRAWAL_FORM)}>Wypłać</button>
+                            <button onClick={() => changeViewModeHandler(ViewMode.DEPOSIT_FORM, account.accountNumber)}>Wpłać</button>
+                            <button onClick={() => changeViewModeHandler(ViewMode.WITHDRAWAL_FORM, account.accountNumber)}>Wypłać</button>
                             <button
-                                onClick={() => changeViewModeHandler(ViewMode.TRANSACTIONS)}>Historia transakcji</button>
+                                onClick={() => changeViewModeHandler(ViewMode.TRANSACTIONS, account.accountNumber)}>Historia transakcji</button>
                         </span>
                     </li>
                 ))}
