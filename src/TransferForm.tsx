@@ -1,5 +1,5 @@
 import './common.css'
-import { ViewMode } from "./Dashboard";
+import { ViewMode } from "./common";
 
 type TransferFormProps = {
     changeViewModeHandler: (viewMode: ViewMode) => void;
