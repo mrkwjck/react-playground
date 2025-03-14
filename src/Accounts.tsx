@@ -22,8 +22,8 @@ export default function Accounts({ changeViewModeHandler }: Readonly<AccountsPro
         const response = await axios.get('http://localhost:8080/api/v1/accounts')
         return response.data
     }
-    const {data, isPending} = useQuery({queryKey: ['accounts'], queryFn: getAccounts})
 
+    const {data, isPending} = useQuery({queryKey: ['accounts'], queryFn: getAccounts})
 
     return (
         <>
@@ -32,7 +32,7 @@ export default function Accounts({ changeViewModeHandler }: Readonly<AccountsPro
                 <button onClick={() => changeViewModeHandler(ViewMode.ACCOUNT_CREATION_FORM)}>Dodaj konto</button>
                 <button onClick={() => changeViewModeHandler(ViewMode.TRANSFER_FORM)}>Zleć przelew</button>
             </div>
-            <ul className='accounts'>
+            <ul className='list accounts'>
                 <li className="header">
                     <span className='column number'>Numer konta</span>
                     <span className='column owner'>Właściciel</span>

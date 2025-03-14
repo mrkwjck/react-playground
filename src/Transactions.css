@@ -1,0 +1,13 @@
+.transactions {
+    .type {
+        width: 200px;
+    }
+
+    .amount {
+        width: 150px;
+    }
+
+    .date {
+        width: 200px;
+    }
+}

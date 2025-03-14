@@ -18,7 +18,9 @@ export default function Dashboard() {
     return (
         <>
             {viewMode == ViewMode.ACCOUNTS && <Accounts changeViewModeHandler={changeViewMode}/>}
-            {viewMode == ViewMode.TRANSACTIONS && <Transactions changeViewModeHandler={changeViewMode}/>}
+            {viewMode == ViewMode.TRANSACTIONS &&
+                <Transactions accountNumber={selectedAccountNumber}
+                              changeViewModeHandler={changeViewMode}/>}
             {viewMode == ViewMode.ACCOUNT_CREATION_FORM &&
                 <AccountCreationForm changeViewModeHandler={changeViewMode}/>}
             {viewMode == ViewMode.DEPOSIT_FORM &&
