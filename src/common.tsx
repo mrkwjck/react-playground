@@ -9,5 +9,5 @@ export enum ViewMode {
 
 export enum TransactionType {
     DEPOSIT,
-    WITHDRAWAL
+    WITHDRAWAL,
 }
