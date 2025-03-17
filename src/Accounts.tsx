@@ -1,5 +1,5 @@
 import "./Accounts.css";
-import { ViewMode } from "./common";
+import { Account, ViewMode } from "./common";
 import "./common.css";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -7,13 +7,6 @@ import { NumericFormat } from "react-number-format";
 
 type AccountsProps = {
     changeViewModeHandler: (viewMode: ViewMode, accountNumber?: string) => void;
-};
-
-type Account = {
-    accountNumber: string;
-    ownerName: string;
-    currency: string;
-    balance: string;
 };
 
 export default function Accounts({ changeViewModeHandler }: Readonly<AccountsProps>) {

@@ -20,7 +20,7 @@ export default function TransactionForm({
     transactionType,
     changeViewModeHandler,
 }: Readonly<TransactionFormProps>) {
-    const [transactionAmount, setTransactionAmount] = useState();
+    const [transactionAmount, setTransactionAmount] = useState<number>();
 
     const transactionEndpointPath = transactionType == TransactionType.DEPOSIT ? "deposit" : "withdrawal";
 

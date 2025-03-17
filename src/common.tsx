@@ -11,3 +11,10 @@ export enum TransactionType {
     DEPOSIT,
     WITHDRAWAL,
 }
+
+export type Account = {
+    accountNumber: string;
+    ownerName: string;
+    currency: string;
+    balance: string;
+};
